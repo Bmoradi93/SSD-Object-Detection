@@ -1,20 +1,20 @@
 # SSD-Object-Detection-TFOD-Pipeline
 Explanations
 
-# Building the Dockerfile
+## Building the Dockerfile
 Explain the docker file and building process.
 
-# Setup
+## Setup
 
 
-# Preparing the dataset(records and classes)
-## Annotation
+## Preparing the dataset(records and classes)
+### Annotation
 
 
-# Pretrained model
+## Pretrained model
 
 
-# Training
+## Training
 
 
 # Inference
