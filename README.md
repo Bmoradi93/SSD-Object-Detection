@@ -3,7 +3,7 @@ This repository uses Tensorflow Object Detection(TFOD) API to implement a traini
 
 Put some images here!
 
-The entire training and inference process takes place in a docker container and the Dockerfile is provided to pull and build. The Dockerfile is based on TFOD docker image. The main branch of this repository uses Tensorflow 1.x. It is recommended to use a GPW-Powered machine for training process. 
+The entire training and inference process takes place in a docker container and the Dockerfile is provided to pull and build. The Dockerfile is based on TFOD docker image. The main branch of this repository uses Tensorflow 1.x. It is recommended to use a GPU-Powered machine for training process. 
 An SSD model is able to operate in real-time(up to 59 fps on 300x300pxl input images).  
 
 ## Setup
