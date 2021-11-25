@@ -1,3 +1,4 @@
+# This script is taken from https://www.pyimagesearch.com/
 # USAGE
 # python predict.py --model lisa/experiments/exported_model/frozen_inference_graph.pb \
 # 	--labels lisa/records/classes.pbtxt \
@@ -41,7 +42,6 @@ model = tf.Graph()
 
 # create a context manager that makes this model the default one for
 # execution
-print('Hello0')
 with model.as_default():
 	# initialize the graph definition
 	graphDef = tf.GraphDef()
@@ -104,7 +104,6 @@ with model.as_default():
 		labels = np.squeeze(labels)
 
 		# loop over the bounding box predictions
-		print('Hello')
 		for (box, score, label) in zip(boxes, scores, labels):
 			# if the predicted probability is less than the minimum
 			# confidence, ignore it

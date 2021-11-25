@@ -1,3 +1,4 @@
+# This script is tken from https://tensorflow-object-detection-api-tutorial.readthedocs.io/en/latest/training.html
 """ Sample TensorFlow XML-to-TFRecord converter
 
 usage: generate_tfrecord.py [-h] [-x XML_DIR] [-l LABELS_PATH] [-o OUTPUT_PATH] [-i IMAGE_DIR] [-c CSV_PATH]
