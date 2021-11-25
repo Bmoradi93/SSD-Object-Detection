@@ -1,0 +1,26 @@
+<annotation>
+	<folder>test</folder>
+	<filename>left_b4420.jpg</filename>
+	<path>/root/autoware_auto_thesis/tensorflow/workspace/ssd_vehicle_detection/images/test/left_b4420.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>640</width>
+		<height>360</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>car</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>181</xmin>
+			<ymin>162</ymin>
+			<xmax>278</xmax>
+			<ymax>234</ymax>
+		</bndbox>
+	</object>
+</annotation>
