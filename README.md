@@ -10,7 +10,7 @@ The entire training and inference process takes place in a docker container and 
 An SSD model is able to operate in real-time(up to 59 fps on 300x300pxl input images).  
 
 ## Setup
-### Docker Engine installation
+### Docker Engine Installation
 Please following this [instructions](https://docs.docker.com/engine/install/ubuntu/) to install docker engine on your ubuntu 18/20.04 machine.
 It is highly recommended to use an NVIDIA-GPU on your machine. In order to use your GPU in your docker image, you must install [nvidia-docker](https://cnvrg.io/how-to-setup-docker-and-nvidia-docker-2-0-on-ubuntu-18-04/). You only need to do Step #2. 
 
@@ -38,6 +38,11 @@ In order to install essential dependencies for annotation and testing tensorflow
 Note: Make sure your terminal is inside docker container!
 
 ```
+# Navigate to the repository's main directory
+cd SSD-Object-Detection-TFOD-Training-Pipeline
+
+# Install dpendencies.
+source scripts/install_tfod.sh
 
 ```
 If your TFOD is properly installed, then you should see the following results on your terminal:
@@ -63,7 +68,28 @@ OK (skipped=1)
 
 ## Preparing the dataset(records and classes)
 ### Annotation
-Explain how to annotate images using labelImg application.
+There are several tools for image annotation. The best one is labelImg which is installed on the docker image.
+Note: SSD-Object-Detection-TFOD-Training-Pipeline is shared between your host and the docker image. Whatever you paste or generate inside that folder will remain after the docker image is down.
+To start annotating data:
+1- Split your dataset into training data (90%) and testing data (10%).
+2- Create your project folder in dataset dirrectory:
+```
+cd SSD-Object-Detection-TFOD-Training-Pipeline/dataset
+
+mkdir <your project name>
+
+cd <your project name>
+
+mkdir train test
+```
+3- Paste your training and testing images in their related directories.
+4- In your docker terminal, open labelImg and start annotating your training and testing data.
+```
+cd SSD-Object-Detection-TFOD-Training-Pipeline# cd dataset/<your project name>/annotations/train
+
+# Run the annotation tool
+labelImg
+```
 
 ### Generating records and label files
 
