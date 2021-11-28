@@ -220,5 +220,7 @@ source scripts/inference.sh
 
 ## Acknowledgment
 [Tensorflow Object detection repository](https://github.com/tensorflow/models)
+    
 [Single Shot Multibox Detecor Paper](https://arxiv.org/abs/1512.02325)
+    
 [TFOD documentation](https://tensorflow-object-detection-api-tutorial.readthedocs.io/en/latest/training.html)
