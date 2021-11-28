@@ -109,16 +109,52 @@ export PROJECT_NAME=<your project name>
 
 # Generate your record files
 source scripts/run_generate_tfrecords.sh
-
 ```
 
 
 ## Pre-trained Model and Network Configuration
 ### Pre-trained model
+In order to start training process, you must download [ssd_inception_v2](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/tf1_detection_zoo.md):
+
+```
+cd SSD-Object-Detection-TFOD-Training-Pipeline/workspace/<your project name>/training
+
+mkdir exported_model training
+
+cd training
+
+wget http://download.tensorflow.org/models/object_detection/ssd_inception_v2_coco_2018_01_28.tar.gz
+
+tar -zxvf ssd_inception_v2_coco_2018_01_28.tar.gz
+```
+
 
 ### Network Configuration
 
+```
+cd SSD-Object-Detection-TFOD-Training-Pipeline/network_configuration/
+
+mkdir <your project name>
+
+cd <your project name>
+
+# You can use the template inside vehicle_detection project.
+cp ../vehicle_detection/ssd_hypes.config ./
+
+# Open the file with your text editor and replace the <YOUR PROJECT TITLE> with your own project name in the entire file.
+```
+
 ## Training
+Once your configuration file is ready, you can start the training process:
+
+```
+SSD-Object-Detection-TFOD-Training-Pipeline/workspace/
+
+export PROJECT_NAME=<your project name>
+
+source scripts/train.sh
+
+```
 
 ## Inference
 
