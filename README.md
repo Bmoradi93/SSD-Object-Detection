@@ -121,14 +121,27 @@ touch classes.pbtxt
 
 I assume you have one label for your dataset. Open classes.pbtxt and paste the followings:
 
-'''
+```
 item {
     id: 1
     name: '<your label>'
 }
-'''
-Note: replace <your label> with your label name.
 
+```
+Note: replace "<your label>" with your label name.
+Note: If you have more than one label (for example two labels), then you must add another item i your classes.pbtxt file:
+    
+```
+item {
+    id: 1
+    name: '<your label #1>'
+}
+
+item {
+    id: 2
+    name: '<your label #2>'
+}
+```
 
 ## Pre-trained Model and Network Configuration
 ### Pre-trained model
@@ -176,6 +189,18 @@ source scripts/train.sh
 
 Once the training process is done, you must generate your model from the generated checkpoints:
 
+```
+# Navigate to the repository's main directory
+cd SSD-Object-Detection-TFOD-Training-Pipeline
+
+export PROJECT_NAME=<your project name>
+
+# Open the scripts/export_model.sh and meke sure your pointing to the right TRAINED_CHECKPOINT_PREFIX
+
+source scripts/export_model.sh
+
+```
+Your frozen_inference_graph.pb is saves inside SSD-Object-Detection-TFOD-Training-Pipeline/workspace/<your project name>/exported_model
 
 ## Inference
 ```
@@ -194,5 +219,6 @@ source scripts/inference.sh
 ```
 
 ## Acknowledgment
-
-## Future Developments
+[Tensorflow Object detection repository](https://github.com/tensorflow/models)
+[Single Shot Multibox Detecor Paper](https://arxiv.org/abs/1512.02325)
+[TFOD documentation](https://tensorflow-object-detection-api-tutorial.readthedocs.io/en/latest/training.html)
