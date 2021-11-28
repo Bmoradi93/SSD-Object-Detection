@@ -97,7 +97,7 @@ labelImg
 Note: Working with labelImg is simple and straightforward. This [tutorial](https://www.youtube.com/watch?v=Tlvy-eM8YO4) explains the process.
 Note: Make sure you run labelImg inside the docker container.
 
-### Generating records and label files
+### Generating records and label map
 TFOD uses the record files to read training and testing images and annotations.
 Once your annotation process (for both training and testing images) is done, then generate the record files:
 
@@ -110,6 +110,24 @@ export PROJECT_NAME=<your project name>
 # Generate your record files
 source scripts/run_generate_tfrecords.sh
 ```
+
+The label map file is simple to generate.
+
+```
+cd SSD-Object-Detection-TFOD-Training-Pipeline/dataset/<your project name>/records
+
+touch classes.pbtxt
+```
+
+I assume you have one label for your dataset. Open classes.pbtxt and paste the followings:
+
+'''
+item {
+    id: 1
+    name: '<your label>'
+}
+'''
+Note: replace <your label> with your label name.
 
 
 ## Pre-trained Model and Network Configuration
@@ -148,15 +166,32 @@ cp ../vehicle_detection/ssd_hypes.config ./
 Once your configuration file is ready, you can start the training process:
 
 ```
-SSD-Object-Detection-TFOD-Training-Pipeline/workspace/
+# Navigate to the repository's main directory
+cd SSD-Object-Detection-TFOD-Training-Pipeline
 
 export PROJECT_NAME=<your project name>
 
 source scripts/train.sh
-
 ```
 
+Once the training process is done, you must generate your model from the generated checkpoints:
+
+
 ## Inference
+```
+# Navigate to the repository's main directory
+cd SSD-Object-Detection-TFOD-Training-Pipeline
+
+# Open scripts/inference.sh and edit the RAW_IMAGE(Enter your own name at the end of the line)
+# Save the file
+
+export PROJECT_NAME=<your project name>
+
+source scripts/inference.sh
+
+# The output is saved in this directory! 
+
+```
 
 ## Acknowledgment
 
