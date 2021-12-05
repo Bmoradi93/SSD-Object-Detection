@@ -108,7 +108,9 @@ cd SSD-Object-Detection-TFOD-Training-Pipeline
 export PROJECT_NAME=<your project name>
 
 # Generate your record files
-source scripts/run_generate_tfrecords.sh
+cd SSD-Object-Detection-TFOD-Training-Pipeline/scripts
+
+source run_generate_tfrecords.sh
 ```
 
 The label map file is simple to generate.
